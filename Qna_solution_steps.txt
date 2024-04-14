@@ -1,0 +1,38 @@
+Steps taken to solve problem:
+
+1. Create Vector DB
+
+- Download PDF file
+- Create Vector DB using Faiss (preferred because using in current projects)
+- loaded pdf using langchain document loader
+- manually assigned page number for 1st 2 chapter
+- could have tuned (chunk_size=500, chunk_overlap=100) for multiple combinations but used the mentioned.
+- Saved vector db at path
+
+2. Prompt Engineering
+
+- sentence-transformer/all-MiniLM-L6-v2 is used for embeddings, but can be tried with other embeddings like all-distilroberta-v1, all-mpnet-base-v2 etc.
+- Created a base prompt (and tuned after certain run)
+- Created multiple functions to load Llama2-7B model and Retrieval QA Chain (fine-tuning can be done on max_token and temperature)
+
+3. Streamlit
+
+- setup streamlit for better UI view.
+- used  and loaded vector db (earlier created) for retrieving information.
+- run streamlit with one question at a time.
+
+
+
+
+Possible enhancement:
+1. Fine tune on best parameter.
+2. Use GPU from google colab for performance and Fast result.
+3. Check and try all the open source model for best accuracy.
+
+
+Error/ Difficulty while solving the problem:
+
+1. Time : it took some extra time to install the dependencies.
+2. random errors: in colab I am getting "AttributeError: module 'numpy.linalg._umath_linalg' has no attribute '_ilp64'" error, tried debugging multiple times
+3. Vector DB is taking time to generate results because of CPU usage.
+4. Runtime is little slow
