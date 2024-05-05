@@ -11,4 +11,6 @@ Colab notebook link: https://colab.research.google.com/drive/1Pn2eRT1tLd76Wm1k10
 ### Screenshot of result on streamlit:
 ![result](https://github.com/Ambujku/llm_qna/assets/18732418/2f91fe0e-2754-486e-a470-487b328650e2)
 
+----
+
 
